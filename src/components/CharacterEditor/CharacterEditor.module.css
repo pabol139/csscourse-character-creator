@@ -4,10 +4,13 @@
 }
 
 .maxWidthWrapper {
+  position: relative;
+  z-index: 3;
 }
 
 .header {
   padding-bottom: 64px;
+  max-width: 65%;
 }
 
 .title {
@@ -24,7 +27,41 @@
 }
 
 .characterWrapper {
+  position: fixed;
+  top: 15%;
+  left: 20%;
+  bottom: 0;
+  z-index: 2;
+  min-height: 500px;
 }
 
 .controlColumn {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.perspectiveEffect {
+  position: fixed;
+  bottom: 0;
+  height: 40%;
+  width: 100%;
+  z-index: 1;
+  background-color: hsl(195deg, 20%, 86%);
+}
+
+@media screen and (min-width: 640px) {
+  .controlColumn {
+    flex-direction: column;
+    max-width: 50%;
+    gap: 0;
+  }
+
+  .characterWrapper {
+    top: 15%;
+    left: 60%;
+    bottom: 5%;
+  }
 }
